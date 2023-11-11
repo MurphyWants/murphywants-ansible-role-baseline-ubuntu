@@ -1,18 +1,36 @@
-# ansible-role-template
+# murphywants-ansible-role-baseline-ubuntu
 
-Purpose:
-
-```
-Image: ''
-tag: latest # unless otherwise specificed in the variables
-```
+## Description & Purpose
+The purpose of this role is to modify an ubuntu system to my baseline. 
 
 This role will:
+- Patch and update the system
+
+## How to Use
+
+Example Inventory:
+
+yaml form:
+```
+group:
+  hosts:
+    hostname.fdqn
+  vars:
+    EXAMPLE_VARIABLE: EXAMPLE_VALUE # This variable is required to run
+```
+
+Example Playbook:
+
+```
+- hosts: all 
+  gather_facts: yes
+  become: yes
+  roles:
+  - role: ansible-role
+```
 
 ## Requirements/Dependencies
-Uses the following modules:
-
-Uses the following roles:
+This role uses OOTB ansible modules. 
 
 ## Tags
 Ansible role template with the following actions & tags:
