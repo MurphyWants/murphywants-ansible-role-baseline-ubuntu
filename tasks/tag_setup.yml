@@ -15,7 +15,7 @@
         name: net.ipv6.conf.lo.disable_ipv6
         value: '1'
         sysctl_set: true
-    when: "{{ UBUNTU_DISABLE_IPV6 }}"
+    when: UBUNTU_DISABLE_IPV6
 
   - block:
     - name: IPV6 - Reset Sysctl All
@@ -33,7 +33,7 @@
         name: net.ipv6.conf.lo.disable_ipv6
         state: absent
         sysctl_set: true
-    when: "not {{ UBUNTU_DISABLE_IPV6 }}"
+    when: not UBUNTU_DISABLE_IPV6
 
 
   - name: Tag - Update (Update Everything)
